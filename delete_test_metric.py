@@ -17,7 +17,7 @@ def get_metrics_id(billing_url, headers, params):
 
     try:
         # отправка GET-запроса, возвращение списка метрик
-        return requests.get(f'{billing_url}/v3/statistics/metrics', headers=headers, params=params).json()
+        return requests.get(f'{billing_url}/statistics/metrics', headers=headers, params=params).json()
 
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
@@ -37,7 +37,7 @@ def delete_test_metric(billing_url, headers, metric_id):
 
     try:
         # отправка DELETE-запроса на удаление метрики
-        response = requests.delete(f'{billing_url}/v3/statistics/metrics/{metric_id}', headers=headers)
+        response = requests.delete(f'{billing_url}/statistics/metrics/{metric_id}', headers=headers)
 
         # проверка успешности запроса
         response.raise_for_status()

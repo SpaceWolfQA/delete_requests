@@ -17,7 +17,7 @@ def get_plans_id(billing_url, headers, params):
 
     try:
         # отправка GET-запроса, возвращение списка планов
-        return requests.get(f'{billing_url}/v3/plans', headers=headers, params=params).json()
+        return requests.get(f'{billing_url}/plans', headers=headers, params=params).json()
 
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
@@ -37,7 +37,7 @@ def delete_test_plan(billing_url, headers, plan_id):
 
     try:
         # отправка DELETE-запроса на удаление плана
-        response = requests.delete(f'{billing_url}/v3/plans/{plan_id}', headers=headers)
+        response = requests.delete(f'{billing_url}/plans/{plan_id}', headers=headers)
 
         # проверка успешности запроса
         response.raise_for_status()

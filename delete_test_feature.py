@@ -17,7 +17,7 @@ def get_features_id(billing_url, headers, params):
 
     try:
         # отправка GET-запроса, возвращение списка фич
-        return requests.get(f'{billing_url}/v3/features', headers=headers, params=params).json()
+        return requests.get(f'{billing_url}/features', headers=headers, params=params).json()
 
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
@@ -37,7 +37,7 @@ def delete_test_feature(billing_url, headers, feature_id):
 
     try:
         # отправка DELETE-запроса на удаление фичи
-        response = requests.delete(f'{billing_url}/v3/features/{feature_id}', headers=headers)
+        response = requests.delete(f'{billing_url}/features/{feature_id}', headers=headers)
 
         # проверка успешности запроса
         response.raise_for_status()

@@ -1,0 +1,3 @@
+BILLING_URL = "https://billing_url_example.com"
+PLATFORM_URL = "https://platform_url_example.com"
+HEADERS = {"Authorization": "Bearer UANPwoeJodv3NETHo9AQ2tig669nHzfL"}
